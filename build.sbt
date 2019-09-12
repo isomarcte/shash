@@ -4,11 +4,12 @@ import ReleaseTransformations._
 
 val projectName = "shash"
 val scala211    = "2.11.12"
-val scala212    = "2.12.8"
+val scala212    = "2.12.10"
+val scala213    = "2.13.0"
 
 // Lazy
 
-lazy val scalaVersions = List(scala211, scala212)
+lazy val scalaVersions = List(scala211, scala212, scala213)
 
 // Groups //
 
@@ -28,10 +29,10 @@ val scodecBitsA             = "scodec-bits"
 
 // Versions //
 
-val catsEffectV = "0.10.1"
+val catsEffectV = "2.0.0"
 val jmhV        = "1.21"
 val scalacheckV = "1.14.0"
-val scodecBitsV = "1.1.9"
+val scodecBitsV = "1.1.12"
 
 // GAVs //
 
