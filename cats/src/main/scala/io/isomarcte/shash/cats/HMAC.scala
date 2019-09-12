@@ -2,7 +2,6 @@ package io.isomarcte.shash.cats
 
 import cats.effect._
 import cats.implicits._
-import java.util.concurrent.locks._
 import javax.crypto._
 import javax.crypto.spec.SecretKeySpec
 import scodec.bits._

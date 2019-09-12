@@ -48,6 +48,7 @@ lazy val scodecBits             = scodecG     %% scodecBitsA            % scodec
 ThisBuild / organization       := "io.isomarcte"
 ThisBuild / scalaVersion       := scala212
 ThisBuild / scalacOptions      += "-target:jvm-1.8"
+ThisBuild / scalacOptions      -= "-Xfuture"
 ThisBuild / javacOptions       ++= Seq("-source", "1.8", "-target", "1.8")
 
 // General Configuration //
@@ -96,7 +97,8 @@ releaseProcess := Seq[ReleaseStep](
 
 lazy val root = (project in file(".")).settings(
   name := projectName,
-  skip in publish := true
+  skip in publish := true,
+  scalacOptions -= "-Xfuture"
 ).aggregate(cats).settings(publishSettings: _*)
 
 // Projects //
@@ -106,7 +108,8 @@ lazy val cats = project.settings(
   libraryDependencies ++= Seq(
     catsEffect,
     scodecBits
-  )
+  ),
+  scalacOptions -= "-Xfuture"
 ).settings(publishSettings: _*)
 
 lazy val jmh = project.settings(
